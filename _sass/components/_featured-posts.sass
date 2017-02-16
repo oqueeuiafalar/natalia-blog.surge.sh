@@ -1,0 +1,44 @@
+.natalia-featured-posts
+    @include m-clearfix
+    margin-bottom: spacing(3)    
+    display: none
+    @media (min-width: $screen-tablet-min)
+        display: block
+
+    .natalia-featured-posts-item
+        list-style: none
+        position: relative
+
+    .natalia-featured-posts-category
+        position: absolute
+        bottom: 30px
+        left: spacing(1)
+        background-color: palette('gray', 'dark')
+        color: #fff
+        padding: spacing(1)/2 spacing(1)
+        font-size: 10px
+        text-transform: uppercase
+        transition: all ease-in .5s
+
+    .natalia-featured-posts-title
+        font-size: 13px
+        color: $color-text-default
+        &:hover
+            color: $color-link-hover
+
+    .natalia-featured-posts-link
+        display: block
+        
+        .natalia-featured-posts-image
+            opacity: .85
+            height: 107px
+            width: 100%
+            transition: all ease-in .5s
+            @media (min-width: $screen-tablet-min)
+                height: 160px
+
+        &:hover
+            .natalia-featured-posts-image
+                opacity: 1            
+            + .natalia-featured-posts-category
+                background-color: palette('cyan', 'dark')

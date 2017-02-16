@@ -1,0 +1,50 @@
+$open-sans-folder: '../fonts/open-sans' !default;
+
+// Open Sans Regular
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url('#{$open-sans-folder}/opensans-regular-webfont.eot');
+    src: url('#{$open-sans-folder}/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$open-sans-folder}/opensans-regular-webfont.woff2') format('woff2'),
+         url('#{$open-sans-folder}/opensans-regular-webfont.woff') format('woff'),
+         url('#{$open-sans-folder}/opensans-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+// Open Sans Semi Bold 600
+@font-face {
+    font-family: 'Open Sans Semi Bold';
+    src: url('#{$open-sans-folder}/opensans-semibold-webfont.eot');
+    src: url('#{$open-sans-folder}/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$open-sans-folder}/opensans-semibold-webfont.woff2') format('woff2'),
+         url('#{$open-sans-folder}/opensans-semibold-webfont.woff') format('woff'),
+         url('#{$open-sans-folder}/opensans-semibold-webfont.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+// Open Sans Extra Bold 800
+@font-face {
+    font-family: 'Open Sans Extra Bold';
+    src: url('#{$open-sans-folder}/opensans-extrabold-webfont.eot');
+    src: url('#{$open-sans-folder}/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$open-sans-folder}/opensans-extrabold-webfont.woff2') format('woff2'),
+         url('#{$open-sans-folder}/opensans-extrabold-webfont.woff') format('woff'),
+         url('#{$open-sans-folder}/opensans-extrabold-webfont.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+// Open Sans Italic 400
+@font-face {
+    font-family: 'Open Sans Italic';
+    src: url('#{$open-sans-folder}/opensans-italic-webfont.eot');
+    src: url('#{$open-sans-folder}/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$open-sans-folder}/opensans-italic-webfont.woff2') format('woff2'),
+         url('#{$open-sans-folder}/opensans-italic-webfont.woff') format('woff'),
+         url('#{$open-sans-folder}/opensans-italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+
+}

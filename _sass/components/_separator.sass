@@ -1,0 +1,17 @@
+.natalia-separator
+   border-width: 2px 0 0 0
+   border-style: solid 
+   border-top-color: $color-gray
+   margin: spacing(1) 0
+   &.natalia-separator-error
+      border-top-color: $color-error
+   &.natalia-separator-primary
+      border-top-color: $color-primary
+   &.natalia-separator-success
+      border-top-color: $color-success
+   &.natalia-separator-alert
+      border-top-color: $color-alert          
+   &.natalia-separator-colorful
+      border: 0
+      height: 2px               
+      @include background-stripes(to right, $color-purple, $color-blue, $color-green, $color-yellow, $color-orange)

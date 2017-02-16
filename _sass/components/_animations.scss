@@ -1,0 +1,9 @@
+@include m-keyframes(kTextShadowUpFadeOut) {
+    0% {
+        text-shadow: 0 0 rgba($color-link-active, .5);
+    }
+
+    100% {
+        text-shadow: 0 -20px rgba($color-link-active, 0);
+    }
+}

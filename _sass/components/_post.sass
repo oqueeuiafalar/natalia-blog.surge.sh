@@ -1,0 +1,147 @@
+// # Posts
+// ## Posts container
+//
+.natalia-posts-container
+   @include m-clearfix
+   @media (min-width: $screen-tablet-min)
+      width: calc((100%/3) * 2)
+      float: left
+   @media (min-width: $screen-desktop-min)
+      width: calc((100%/4) * 3)
+      float: left
+   + .natalia-widgets-container
+      margin-top: spacing(2)
+      @media (min-width: $screen-tablet-min)
+         margin-top: 0
+         width: calc((100%/3) - #{spacing(2)})
+         float: left
+         margin-left: spacing(2)
+      @media (min-width: $screen-desktop-min)
+         width: calc((100%/4) - #{spacing(2)})
+
+
+// ## Post
+//
+.natalia-post
+   background-color: white
+   padding: spacing(2)
+   position: relative
+   @media (min-width: $screen-desktop-min)
+      padding: spacing(3)
+   + .natalia-post,
+   + .natalia-pagination
+      margin-top: spacing(2)
+      color: #333
+   .natalia-post-title
+      text-align: center
+      color: $color-text-title
+   .natalia-post-title,
+   .natalia-post-title > a
+      color: $color-blue
+      text-transform: uppercase
+      + .natalia-post-content
+         margin-top: spacing(1)
+   .natalia-post-content
+      font-size: 14px
+      line-height: 1.9
+      a
+         color: $color-link
+         transition: color .5s
+         &:hover
+            color: $color-link-hover
+            border-bottom: 1px dotted
+         &:visited
+            color: $color-link-visited
+         &.img,
+         > img
+         img
+            border-bottom: none
+      img, iframe
+         max-width: 100%
+         max-width: calc(100% + 32px)
+         margin-left: -16px
+         &:hover
+            border-bottom: none
+         @media (min-width: $screen-desktop-min)
+            max-width: calc(100% + 48px)
+            margin-left: -24px
+
+      p
+         margin-top: spacing(2)
+         margin-bottom: spacing(2)
+         color: $color-text-default
+         a
+            max-width: 100%
+            white-space: pre-wrap
+            word-break: break-all
+      ul
+         margin-top: spacing(2)
+         margin-bottom: spacing(2)
+         font-size: inherit
+         line-height: 1.9
+      h2
+         font-size: 16px
+         text-transform: uppercase
+         color: $color-text-title
+      h3
+         font-size: 14px
+         text-transform: uppercase
+         color: $color-text-title
+      hr
+         border-width: 1px 0 0 0
+         border-style: solid
+         border-top-color: $color-primary
+      blockquote,
+      pre
+         white-space: pre-wrap
+         background-color: $color-body-background
+         display: block
+         padding: spacing(2) spacing(1) spacing(2) spacing(2)
+         max-width: 100%
+         border-left: 2px solid $color-link
+         font-style: italic
+         code
+            background: none
+            color: inherit
+      strong
+         @include get-main-font(semibold)
+         color: palette("gray", "dark")
+      table
+         border: 1px solid $color-blue
+         width: 100%
+         tr
+            line-height: 1.75
+            td,
+            th
+               text-indent: spacing(1)
+         thead
+            background-color: $color-blue
+            color: $color-white
+            text-align: left
+         tbody
+            tr:nth-child(even)
+               background-color: $color-silver
+   .natalia-post-info
+      margin: spacing(1) 0 spacing(3) spacing(1)
+      font-size: 13px
+      text-transform: uppercase
+      color: $color-text-secundary
+      @include get-main-font(semibold)
+      text-align: center
+
+   .natalia-post-date
+   .natalia-post-category
+      margin-right: spacing(1)
+
+   .natalia-post-category
+      text-transform: none
+      .natalia-post-category-name
+         text-transform: uppercase
+
+   .fb-post
+      width: 100%
+      > span
+         // width: 100% !important
+         iframe
+            // width: 100% !important
+            margin-left: 0

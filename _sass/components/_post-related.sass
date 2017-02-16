@@ -1,0 +1,39 @@
+.natalia-post-options-related-list
+	list-style: none
+	padding: 0
+	display: block
+	@include m-clearfix
+
+	.natalia-post-options-related-link
+		display: block
+
+		.natalia-post-options-related-title
+			color: $color-text-title
+			font-size: 12px
+			display: block
+			max-width: 100%
+			transition: all ease-in .25s
+
+	.natalia-post-options-related-item
+		display: inline-block
+		padding: 0 spacing(1) 0 0
+		opacity: .75
+		transition: all ease-in .25s
+
+		&:hover
+			opacity: 1
+
+			.natalia-post-options-related-title
+				color: $color-link
+
+	.natalia-post-options-related-image
+		width: 100%
+
+	&.natalia-post-options-related-list-sidebar
+		.natalia-post-options-related-image
+			min-width: 202px
+			min-height: 134px
+
+		.natalia-post-options-related-item
+			margin-bottom: spacing(1)
+			padding: 0

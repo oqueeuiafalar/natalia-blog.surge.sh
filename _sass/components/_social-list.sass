@@ -1,0 +1,27 @@
+.social-list
+    list-style: none
+    display: inline-block
+    vertical-align: middle
+
+    .social-item
+        display: inline-block
+        padding: 0
+        font-size: 30px
+        margin-right: 8px
+
+    .social-link
+        color: $color-text-secundary
+        transition: color ease-in 0.25s
+        &:visited
+            color: $color-text-secundary
+        &:hover
+            color: $color-link-hover
+        &:active
+            color: $color-link-visited
+
+.social-list-footer
+    .social-link,
+    .social-link:hover,
+    .social-link:active,
+    .social-link:visited
+        color: #fff

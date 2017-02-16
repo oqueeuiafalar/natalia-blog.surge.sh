@@ -1,0 +1,26 @@
+$main-font-family-regular: 'Open Sans Regular', sans-serif;
+$main-font-family-semibold: 'Open Sans Semi Bold', sans-serif;
+$main-font-family-bold: 'Open Sans Extra Bold', sans-serif;
+$main-font-family-italic: 'Open Sans Italic', sans-serif;
+$main-font-weight-regular: 400;
+$main-font-weight-semibold: 600;
+$main-font-weight-bold: 800;
+
+$main-font-map: (
+   'regular': (
+      'font-family': $main-font-family-regular,
+      'font-weight': $main-font-weight-regular
+   ),
+   'semibold': (
+      'font-family': $main-font-family-semibold,
+      'font-weight': $main-font-weight-semibold
+   ),
+   'bold': (
+      'font-family': $main-font-family-bold,
+      'font-weight': $main-font-weight-bold
+   ),   
+   'italic': (
+      'font-family': $main-font-family-italic,
+      'font-weight': $main-font-weight-regular
+   )
+);   

@@ -1,0 +1,74 @@
+//@import "compass"
+
+$grid-number-of-columns: 12 !default
+
+@mixin m-generate-column($column-width)
+	position: relative
+	min-height: 1px
+	width: $column-width
+	float: left
+
+@mixin m-generate-offset($offset-width)
+	position: relative
+	min-height: 1px
+	margin-left: $column-width
+	float: left
+
+.row
+	@include clearfix()
+	@include box-sizing(border-box)
+
+*[class^='col-'],
+*[class*=' col-']
+	@include box-sizing(border-box)
+	&:before,
+	&:after
+		@include box-sizing(border-box)
+
+@each $breakpoint-name, $breakpoint-value in $breakpoints-map-min
+	@for $i from 1 through $grid-number-of-columns
+		@media (min-width: $breakpoint-value)
+			.col-#{$breakpoint-name}-#{$i}
+				@include m-generate-column(#{(100% / $grid-number-of-columns) * $i})
+
+			.col-offset-#{$breakpoint-name}-#{$i}
+				@include m-generate-column(#{(100% / $grid-number-of-columns) * $i})
+
+@for $i from 1 through $grid-number-of-columns
+	.col-#{$i}
+		@include m-generate-column(#{(100% / $grid-number-of-columns) * $i})
+
+$spacing-directions: top right bottom left
+
+@for $i from 1 through length($spacings)
+	@each $spacing-direction in $spacing-directions
+		.p-margin-#{$spacing-direction}-#{$i}
+			margin-#{$spacing-direction}: nth($spacings, $i) !important
+
+		.p-padding-#{$spacing-direction}-#{$i}
+			padding-#{$spacing-direction}: nth($spacings, $i) !important
+
+		.p-margin-horizontal-#{$i}
+			margin-left: nth($spacings, $i) !important
+			margin-right: nth($spacings, $i) !important
+
+		.p-padding-horizontal-#{$i}
+			padding-left: nth($spacings, $i) !important
+			padding-right: nth($spacings, $i) !important
+
+		.p-margin-vertical-#{$i}
+			margin-top: nth($spacings, $i) !important
+			margin-bottom: nth($spacings, $i) !important
+
+		.p-padding-vertical-#{$i}
+			padding-top: nth($spacings, $i) !important
+			padding-bottom: nth($spacings, $i) !important
+
+		.p-padding-#{$i}
+			padding: nth($spacings, $i) !important
+
+		.p-margin-#{$i}
+			margin: nth($spacings, $i) !important
+
+@function spacing($spacing-index)
+	@return nth($spacings, $spacing-index)

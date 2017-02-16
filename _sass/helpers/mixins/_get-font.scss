@@ -1,0 +1,4 @@
+@mixin get-main-font($font-width) {
+   font-family: map-get(map-get($main-font-map, $font-width), 'font-family');
+   font-weight: map-get(map-get($main-font-map, $font-width), 'font-weight');
+}

@@ -1,0 +1,75 @@
+// Pagination
+.natalia-pagination
+   background-color: white
+   padding: spacing(2)
+   text-align: center
+   font-size: 13px
+   @include m-clearfix
+
+   .natalia-pagination-count
+
+      + .natalia-pagination-list
+         margin-top: spacing(1)
+         @media (min-width: $screen-tablet-min)
+            margin-top: 0
+
+   .natalia-pagination-list
+      display: block
+      list-style: none
+
+      @media (min-width: $screen-tablet-min)
+         display: inline
+
+      .natalia-pagination-item
+         display: inline
+         color: $color-text-secundary
+
+         > a
+            padding: 0 spacing(1)/2
+            width: 100%
+            height: 100%
+
+         &:hover
+            color: $color-link-hover
+
+         &.natalia-pagination-item-active
+            background-color: $color-link-active
+            color: #fff
+            cursor: initial
+
+            &:hover
+               background-color: $color-link-active
+               color: #fff
+
+         &.natalia-pagination-item-inactive,
+
+         &.natalia-pagination-item-inactive:hover
+            color: $color-text-secundary
+            cursor: initial
+
+         + .natalia-pagination-item
+            margin-left: spacing(1)
+   
+   @media (min-width: $screen-tablet-min)
+      padding: 0
+      
+      .natalia-pagination-count         
+         padding: spacing(2)
+         float: left
+         display: inline-block
+      
+      .natalia-pagination-list            
+         float: right
+
+         .natalia-pagination-item-next 
+            display: inline-block
+            background-color: $color-link
+            transition: all ease-in .25s
+            > a
+               padding: spacing(2)
+               color: #fff
+               display: block
+               width: 100%
+               height: 100%
+            &:hover               
+               background-color: $color-link-hover

@@ -1,0 +1,30 @@
+*, *:before, *:after 
+   @include box-sizing(inherit)
+
+html, body
+   background: $color-body-background
+   height: 100%
+   @include box-sizing(border-box)      
+   @include get-main-font(regular)
+   font-weight: 400
+   
+body    
+   color: $color-text-default
+   background-color: $color-body-background
+   line-height: 1.5
+
+img 
+   max-width: 100%
+
+// ## Links   
+a, a:hover
+   text-decoration: none
+   color: $color-link
+a:hover
+   color: $color-link-hover
+a:visited
+   color: $color-link-visited
+
+// ## Strong
+strong   
+   font-weight: 600   
