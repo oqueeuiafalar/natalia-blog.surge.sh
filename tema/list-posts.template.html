@@ -1,0 +1,14 @@
+<div>
+	<p data-ng-if="vc.vm.isLoadingPosts">Carregando posts</p>
+	<div data-ng-repeat="post in vc.vm.postsList" class="natalia-post">	
+		<div class="natalia-post-info">		
+			<post-date data-post="post" class="natalia-post-data"></post-date>
+			<list-posts-title data-post="post" class="natalia-post-title"></list-posts-title>	
+		</div>
+		<div class="natalia-post-content">
+			<featured-image data-post="post"></featured-image>	
+			<list-posts-excerpt data-post="post"></list-posts-excerpt>
+	    	<share data-post="post"></share>		
+		</div>
+	</div>
+</div>

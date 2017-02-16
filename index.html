@@ -3,60 +3,20 @@
    <!-- include FrontPress page-head attribute directive if you want-->
    <head page-head>
        <link rel="stylesheet" href="/css/main.css">
+       
        <script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
        <script type="text/javascript" src="/node_modules/frontpress/release/frontpress.min.js"></script>   
        <script type="text/javascript" src="/tema/js/components/header-navigator/header-navigator.module.js"></script>   
+       <script type="text/javascript" src="/tema/js/components/header-social-links/header-social-links.module.js"></script>   
        <script type="text/javascript" src="/tema/js/components/header-navigator/directives/header-navigator.directive.js"></script>   
-       <script type="text/javascript">
-
-        angular.module("oquequeeuiafalar", ["frontpress", "oquequeeuiafalar.components.header-navigator"]);
-         
-        angular.module("oquequeeuiafalar").config(function($FrontPressProvider){
-
-            var coisas = {
-                  "views.home": "/js/views/home/templates/home.template.html",
-                  "views.post": "/js/views/post/templates/post.template.html",
-                  "components.fullpost": "/js/components/full-post/templates/full-post.template.html",
-                  "components.fullpost.categories": "/js/components/full-post/templates/full-post-categories-list.template.html",
-                  "components.fullpost.tags": "/js/components/full-post/templates/full-post-tags-list.template.html",
-                  "components.fullpost.authorname": "/js/components/full-post/templates/full-post-author-name.template.html",
-                  "components.listposts": "/js/components/list-posts/templates/list-posts.template.html",
-                  "components.pagehead": "/js/components/page-head/templates/page-head.template.html",
-                  "components.postdate": "/js/components/post-date/templates/post-date.template.html",
-                  "components.featuredimage": "/js/components/featured-image/templates/featured-image.template.html",
-                  "components.pagination": "/js/components/pagination/templates/pagination.template.html",
-                  "components.share": "/js/components/share/templates/share.template.html",
-                  "components.fullpost.content":"/js/components/full-post/templates/full-post-content-v2.template.html",
-                  "components.fullpost.title":"/js/components/full-post/templates/full-post-title-v2.template.html",
-                  "components.listposts.excerpt":"/js/components/list-posts/templates/list-posts-excerpt-v2.template.html",
-                  "components.listposts.title":"/js/components/list-posts/templates/list-posts-title-v2.template.html"
-                };
-
-
-            $FrontPressProvider.configure.load({
-                "restApiUrl": "http://natalia.blog.br/wp-json",
-                "apiVersion": "v2",
-                "pageSize": 10,
-                "infiniteScroll": true,
-                "routes": {
-                    "post": "/:postSlug",
-                    "home.pagination": "/pagina/:pageNumber"
-                },
-                "titles": {
-                    "post": ":postTitle - :siteName",
-                    "home": "Home - :siteName"
-                },
-                templateUrl: {
-                  "views.home": "/tema/home.template.html"
-                }
-            });
-        });
-
-       </script>
+       <script type="text/javascript" src="/tema/js/components/header-social-links/directives/header-social-links.directive.js"></script>   
+       <script type="text/javascript" src="/oquequeeuiafalar.module.js"></script>
+       <script type="text/javascript" src="/oquequeeuiafalar.config.js"></script>
    </head>
    <body>
 
     <nav data-header-navigator></nav>
+
     <main class="natalia-body">
       <div class='natalia-nav natalia-nav-trigger'>
         <i class='fa fa-bars natalia-nav-trigger-icon'></i>
@@ -70,9 +30,7 @@
         
         <div class="natalia-header-links">
           <div class="p-float-right">
-            
-            <!-- {% include widgets/social-list.html %} -->
-
+            <nav data-header-social-links></nav>
             <span class='input-box input-box-medium tooltip tooltip-top' aria-label="Buscar no site">
               <input type='text' placeholder="Buscar..." class='input-box-input'>
               <i class="fa fa-search input-box-icon"></i>
