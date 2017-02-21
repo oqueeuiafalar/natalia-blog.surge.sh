@@ -38,7 +38,8 @@
           },
           templateUrl: {
             "views.home": "/tema/home.template.html",
-            "components.listposts": "/tema/list-posts.template.html"
+            "components.listposts": "/tema/list-posts.template.html",
+            "components.fullpost": "/tema/full-post.template.html"
           }
       });
   });  
