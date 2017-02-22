@@ -12,7 +12,10 @@
        <script type="text/javascript" src="/tema/js/components/header-navigator/header-navigator.module.js"></script>   
        <script type="text/javascript" src="/tema/js/components/header-social-links/header-social-links.module.js"></script>   
        <script type="text/javascript" src="/tema/js/components/header-navigator/directives/header-navigator.directive.js"></script>   
-       <script type="text/javascript" src="/tema/js/components/header-social-links/directives/header-social-links.directive.js"></script>   
+       <script type="text/javascript" src="/tema/js/components/header-social-links/directives/header-social-links.directive.js"></script>         
+
+       <script type="text/javascript" src="/tema/js/components/widgets/author-information/author-information.module.js"></script>   
+       <script type="text/javascript" src="/tema/js/components/widgets/author-information/directives/author-information.directive.js"></script>   
        <script type="text/javascript" src="/oquequeeuiafalar.module.js"></script>
        <script type="text/javascript" src="/oquequeeuiafalar.config.js"></script>
    </head>
@@ -45,32 +48,7 @@
       <div class="natalia-widgets-container">
         <aside class="natalia-widgets-container">
           <section class="natalia-widgets">
-
-             <div class="natalia-widget p-text-align-center" itemscope itemtype="http://schema.org/Person">
-              <img src='http://s23.postimg.org/oe0c5ionf/natalia.jpg' class='natalia-avatar natalia-avatar-circle'/>
-                <h3 class="natalia-widget-title p-margin-bottom-0" itemprop="name">
-                  <span class='p-display-inline'>Natalia Santos</span>
-                </h3>
-                <span class='p-display-inline'>é apaixonada por música, cultura pop, literatura.</span>
-
-              <p class="social-icons">
-                  <a itemprop="url" href="" class="social-icon-link" title="Facebook">
-                    <i class="fa fa-facebook social-icon"></i>
-                  </a>
-                  <a itemprop="url" href="" class="social-icon-link" title="Instagram">
-                    <i class="fa fa-instagram social-icon"></i>
-                  </a>
-                  <a itemprop="url" href="" class="social-icon-link" title="Pinterest">
-                    <i class="fa fa-pinterest social-icon"></i>
-                  </a>
-                  <a itemprop="url" href="" class="social-icon-link" title="Youtube">
-                    <i class="fa fa-youtube social-icon"></i>
-                  </a>
-                    <a itemprop="url" href="" class="social-icon-link" title="Flickr">
-                        <i class="fa fa-flickr social-icon"></i>
-                    </a>
-              </p>
-             </div>
+            <div widget-author-information></div>
           </section>
           <section class="natalia-widgets">
 <div class="natalia-widget natalia-widget-related-posts">
