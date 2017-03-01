@@ -1,0 +1,52 @@
+.header-navigation
+	position: absolute
+	background: #fff
+	width: 280px
+	z-index: 99
+	min-height: 100vh
+	border-right: 1px solid #dedede
+	
+	@media (min-width: $screen-tablet-min)
+		width: 100%
+		min-height: initial
+
+	+element("transparent-overlay")
+		position: fixed
+		width: 100%
+		height: 100%
+		background: rgba(0,0,0,0.4)
+		z-index: 98
+		
+		@media (min-width: $screen-tablet-min)
+			display: none
+
+	+element("list")
+		padding: 0
+		display: flex
+		flex-direction: column
+		
+		@media (min-width: $screen-tablet-min)
+			flex-direction: row
+
+		+element("item")
+			list-style: none
+			padding: 0
+			border-bottom: 1px solid #dfdfdf
+			min-height: 46px
+			line-height: 46px
+
+			+modifier("featured")
+				display: none
+				
+				@media (min-width: $screen-tablet-min)
+					flex-grow: 1
+					display: initial
+			
+			@media (min-width: $screen-tablet-min)
+				border-bottom: none
+				padding: 0 10px
+
+			+element("link")
+				padding: 0 10px
+				width: 100%
+				display: block
