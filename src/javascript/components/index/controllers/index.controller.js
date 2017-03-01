@@ -2,14 +2,12 @@
 	
 	"use strict";
 
-	angular.module("oquequeeuiafalar").controller("indexController", IndexController);
+	angular.module("oquequeeuiafalar").controller("indexController", indexController);
 
-	IndexController.$inject = ["HeaderNavigatorModel"];
+	indexController.$inject = ["HeaderNavigatorModel", "$scope"];
 	
-	function IndexController(HeaderNavigatorModel){
-		var vc = this;
-		vc.headerNavigatorModel = HeaderNavigatorModel;
-		console.log(vc.headerNavigatorModel);
+	function indexController(HeaderNavigatorModel, $scope){
+		$scope.headerNavigatorModel = HeaderNavigatorModel;	
 	}
 
 })();
