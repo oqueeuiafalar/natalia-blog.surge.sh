@@ -40030,14 +40030,14 @@ TagsApi.$inject = ["AjaxModel", "$FrontPress", "ConfigsToParams"];
 	
 	"use strict";
 
-	angular.module("oquequeeuiafalar.components.widgets.publicidade-sidebar", []);
+	angular.module("oquequeeuiafalar.components.widgets.links-institucionais", []);
 
 })();
 (function(){
 	
 	"use strict";
 
-	angular.module("oquequeeuiafalar.components.widgets.links-institucionais", []);
+	angular.module("oquequeeuiafalar.components.widgets.publicidade-sidebar", []);
 
 })();
 (function(){
@@ -40097,20 +40097,54 @@ TagsApi.$inject = ["AjaxModel", "$FrontPress", "ConfigsToParams"];
 	
 	"use strict";
 
+	angular.module("oquequeeuiafalar.components.header-navigator").controller("HeaderNavigatorDirectiveController", HeaderNavigatorDirectiveController);
+
+	HeaderNavigatorDirectiveController.$inject = ["HeaderNavigatorModel"];
+
+	function HeaderNavigatorDirectiveController(HeaderNavigatorModel){
+		
+		var vc = this;
+		vc.vm = HeaderNavigatorModel;
+	
+		vc.closeHeaderNavigation = function(){
+			vc.vm.isOpen = false;
+		}
+
+	}
+
+})();
+(function(){
+	
+	"use strict";
+
 	angular.module("oquequeeuiafalar.components.header-navigator").directive("headerNavigator", HeaderNavigatorDirective);
 
 	function HeaderNavigatorDirective(){
 		var directive = {
 			restrict: "AE",
 			replace: true,
+			scope: {},
 			templateUrl: "/src/javascript/components/header-navigator/templates/header-navigator.template.html",
 			controllerAs: "vc",
-			controller: function(){
-				var vc = this;
-			},
+			controller: "HeaderNavigatorDirectiveController",
 			bindToController: true
 		};
 		return directive;
+	}
+
+})();
+(function(){
+	
+	"use strict";
+
+	angular.module("oquequeeuiafalar.components.header-navigator").factory("HeaderNavigatorModel", HeaderNavigatorModel);
+
+	function HeaderNavigatorModel(){
+		var model = {
+			isOpen: true
+		};
+		return model;
+
 	}
 
 })();
@@ -40181,11 +40215,11 @@ TagsApi.$inject = ["AjaxModel", "$FrontPress", "ConfigsToParams"];
 	
 	"use strict";
 
-	angular.module("oquequeeuiafalar.components.widgets.publicidade-sidebar").directive("widgetPublicidadeSidebar", WidgetPublicidadeSidebarDirective);
+	angular.module("oquequeeuiafalar.components.widgets.links-institucionais").directive("widgetLinksInstitucionais", WidgetLinksInstitucionaisDirective);
 
-	function WidgetPublicidadeSidebarDirective(){
+	function WidgetLinksInstitucionaisDirective(){
 		var directive = {
-			templateUrl: "/src/javascript/components/widgets/publicidade-sidebar/templates/publicidade-sidebar.template.html",
+			templateUrl: "/src/javascript/components/widgets/links-institucionais/templates/links-institucionais.template.html",
 			restrict: "AE",
 			controller: function(){
 				var vc = this;
@@ -40202,11 +40236,11 @@ TagsApi.$inject = ["AjaxModel", "$FrontPress", "ConfigsToParams"];
 	
 	"use strict";
 
-	angular.module("oquequeeuiafalar.components.widgets.links-institucionais").directive("widgetLinksInstitucionais", WidgetLinksInstitucionaisDirective);
+	angular.module("oquequeeuiafalar.components.widgets.publicidade-sidebar").directive("widgetPublicidadeSidebar", WidgetPublicidadeSidebarDirective);
 
-	function WidgetLinksInstitucionaisDirective(){
+	function WidgetPublicidadeSidebarDirective(){
 		var directive = {
-			templateUrl: "/src/javascript/components/widgets/links-institucionais/templates/links-institucionais.template.html",
+			templateUrl: "/src/javascript/components/widgets/publicidade-sidebar/templates/publicidade-sidebar.template.html",
 			restrict: "AE",
 			controller: function(){
 				var vc = this;

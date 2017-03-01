@@ -1,21 +1,29 @@
 .header-navigation
-	position: absolute
+	margin-left: 0
+	display: block		
+	position: fixed
 	background: #fff
 	width: 280px
 	z-index: 99
 	min-height: 100vh
 	border-right: 1px solid #dedede
+	transition: margin-left ease-in-out .5s
+	
+	+modifier("is-hidden")
+		margin-left: -280px
+		transition: margin-left ease-in-out .5s
 	
 	@media (min-width: $screen-tablet-min)
 		width: 100%
 		min-height: initial
 
 	+element("transparent-overlay")
-		position: fixed
-		width: 100%
-		height: 100%
-		background: rgba(0,0,0,0.4)
-		z-index: 98
+		+modifier("is-open")
+			position: fixed
+			width: 100%
+			height: 100%
+			background: rgba(0,0,0,0.4)
+			z-index: 98
 		
 		@media (min-width: $screen-tablet-min)
 			display: none
@@ -24,6 +32,8 @@
 		padding: 0
 		display: flex
 		flex-direction: column
+		max-width: 1000px
+		margin: 0 auto
 		
 		@media (min-width: $screen-tablet-min)
 			flex-direction: row

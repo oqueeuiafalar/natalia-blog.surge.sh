@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="oquequeeuiafalar">
+<html ng-app="oquequeeuiafalar" ng-controller="indexController as vc" ng-class="{'p-overflow-hidden': vc.headerNavigatorModel.isOpen}">
    <!-- include FrontPress page-head attribute directive if you want-->
    <head page-head>
       <meta charset="utf-8">
@@ -23,12 +23,9 @@
         <div class="natalia-header-links">
           <div class="p-float-right">
             <nav data-header-social-links></nav>
-            <span class='input-box input-box-medium tooltip tooltip-top' aria-label="Buscar no site">
-              <input type='text' placeholder="Buscar..." class='input-box-input'>
-              <i class="fa fa-search input-box-icon"></i>
-            </span>
           </div>
         </div>
+
       </header>
       <ui-view class="natalia-posts-container"></ui-view>
       <div class="natalia-widgets-container">

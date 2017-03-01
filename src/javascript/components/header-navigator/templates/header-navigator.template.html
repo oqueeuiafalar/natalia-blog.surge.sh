@@ -1,8 +1,10 @@
 <div>
-	<nav class="header-navigation">
+	<nav ng-class="{ 'header-navigation': vc.vm.isOpen, 'header-navigation--is-hidden': !vc.vm.isOpen}">
 		<ul class="header-navigation__list">
 			<li class="header-navigation__list__item--featured">
-				<a href="" class="header-navigation__list__item__link">home</a>
+				<a href="" class="header-navigation__list__item__link">
+					<i class="fa fa-home"></i>
+				</a>
 			</li>	
 			<li class="header-navigation__list__item">
 				<a href="" class="header-navigation__list__item__link">teste</a>
@@ -21,5 +23,5 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="header-navigation__transparent-overlay"></div>
+	<div ng-class="{'header-navigation__transparent-overlay--is-open': vc.vm.isOpen, 'header-navigation__transparent-overlay': !vc.vm.isOpen}" ng-click="vc.closeHeaderNavigation()"></div>
 </div>

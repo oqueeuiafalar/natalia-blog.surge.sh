@@ -8,11 +8,10 @@
 		var directive = {
 			restrict: "AE",
 			replace: true,
+			scope: {},
 			templateUrl: "/src/javascript/components/header-navigator/templates/header-navigator.template.html",
 			controllerAs: "vc",
-			controller: function(){
-				var vc = this;
-			},
+			controller: "HeaderNavigatorDirectiveController",
 			bindToController: true
 		};
 		return directive;
