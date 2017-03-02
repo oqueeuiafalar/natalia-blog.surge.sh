@@ -7,16 +7,16 @@
 	z-index: 99
 	min-height: 100vh
 	border-right: 1px solid #dedede
-	transition: margin-left ease-in-out .5s
+	transition: margin-left ease-in-out .5s	
 	
 	+modifier("is-hidden")
 		margin-left: -280px
-		transition: margin-left ease-in-out .5s
+		transition: margin-left ease-in-out .5s		
 	
 	@media (min-width: $screen-tablet-min)
 		width: 100%
 		min-height: initial
-		border-top: 2px solid #e55564
+		border-top: 1px solid #c7b575
 
 	+element("transparent-overlay")
 		+modifier("is-open")
@@ -35,9 +35,12 @@
 		flex-direction: column
 		max-width: 1000px
 		margin: 0 auto
+		overflow: auto
+		max-height: 100vh
 		
 		@media (min-width: $screen-tablet-min)
 			flex-direction: row
+			overflow: initial			
 
 		+element("item")
 			list-style: none
@@ -45,6 +48,14 @@
 			border-bottom: 1px solid #dfdfdf
 			min-height: 46px
 			line-height: 46px
+			font-size: 14px
+
+			+modifier("mobile-divisor")
+				background-color: #4d4d4d
+				color: #fff			
+				
+				@media (min-width: $screen-tablet-min)
+					display: none
 
 			+modifier("featured")
 				display: none
@@ -52,6 +63,7 @@
 				@media (min-width: $screen-tablet-min)
 					flex-grow: 1
 					display: initial
+					font-size: 18px
 			
 			@media (min-width: $screen-tablet-min)
 				border-bottom: none
@@ -61,3 +73,7 @@
 				padding: 0 10px
 				width: 100%
 				display: block
+				color: inherit
+				&:hover,
+				&:visited
+					color: inherit

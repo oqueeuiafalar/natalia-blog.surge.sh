@@ -16,15 +16,15 @@
 
     <main class="natalia-body--navigation-is-open">
 
-      <header class='natalia-header'>
-        
-        <div class="natalia-header-links">
-          <div class="p-float-right">
-            <nav data-header-social-links></nav>
-          </div>
-        </div>
+      <header class='page-header'>
 
+      <div class="page-header__bar">
+        <i class="fa fa-bars" ng-click="headerNavigatorModel.openHeader()"></i>
+      </div>
+
+        <a href="/" class="page-header__logo"><img src="/dist/img/oquequeeuiafalar-logo.png" class="page-header__logo__image"></a>
       </header>
+
       <ui-view class="natalia-posts-container"></ui-view>
       <div class="natalia-widgets-container">
         <aside class="natalia-widgets-container">
