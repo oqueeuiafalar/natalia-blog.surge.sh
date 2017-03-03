@@ -1,6 +1,6 @@
-<div>	
+<div class="natalia-post">	
 	<p data-ng-if="vc.vm.isLoadingFullPost">carregando...</p>	
-	<article data-ng-if="vc.vm.isLoadingFullPost === false" class="natalia-post">
+	<article data-ng-if="vc.vm.isLoadingFullPost === false">
 		<div class="natalia-post-info">
 			<post-date data-post="vc.vm" class="natalia-post-date"></post-date>		
 			<full-post-title data-post="vc.vm" class="natalia-post-title"></full-post-title>				
@@ -13,5 +13,5 @@
 			<full-post-tags-list data-post="vc.vm"></full-post-tags-list>       							
 		</div>
 	</article>	
-	<div id="disqus_thread"></div>
+	<div disqus="vc.vm.id"></div>
 </div>

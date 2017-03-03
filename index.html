@@ -19,7 +19,9 @@
         <i class="fa fa-bars" ng-click="headerNavigatorModel.openHeader()"></i>
       </div>
 
-        <a href="/" class="page-header__logo"><img src="/dist/img/oquequeeuiafalar-logo.png" class="page-header__logo__image"></a>
+        <a ui-sref="home" class="page-header__logo">
+          <img src="/dist/img/oquequeeuiafalar-logo.png" class="page-header__logo__image">
+        </a>
       </header>
 
       <ui-view class="natalia-posts-container"></ui-view>
