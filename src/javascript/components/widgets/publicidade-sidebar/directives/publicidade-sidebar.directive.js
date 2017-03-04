@@ -8,9 +8,11 @@
 		var directive = {
 			templateUrl: "/src/javascript/components/widgets/publicidade-sidebar/templates/publicidade-sidebar.template.html",
 			restrict: "AE",
-			controller: function(){
+			controller: function(PublicidadeModel){
 				var vc = this;
+				vc.vm = PublicidadeModel;
 			},
+			scope: {},
 			controllerAs: "vc",
 			bindToController: true,
 			replace: true			

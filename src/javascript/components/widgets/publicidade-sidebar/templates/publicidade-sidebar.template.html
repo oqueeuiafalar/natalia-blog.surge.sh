@@ -1,9 +1,7 @@
 <div class="natalia-widget">
-  <p class="natalia-widget-title">Publicidade</p>
-  <a href="" class="p-display-block p-margin-vertical-1">
-    <img src="http://placehold.it/202x134" alt="Publicidade">    
-  </a>
-  <a href="" class="p-display-block p-margin-vertical-1">
-    <img src="http://placehold.it/202x134" alt="Publicidade">    
-  </a>  
+	<p class="natalia-widget-title">Publicidade</p>
+
+	<a ng-repeat="item in vc.vm.items" ng-href="{{item.href}}" target="_blank" class="p-display-block p-margin-vertical-1">
+		<img ng-src="{{item.image}}" alt="{{item.imageAlt}}">
+	</a>
 </div>

@@ -40016,6 +40016,13 @@ TagsApi.$inject = ["AjaxModel", "$FrontPress", "ConfigsToParams"];
 	
 	"use strict";
 
+	angular.module("instagram-twenty", ["frontpress.components.ajax"]);
+	
+})();
+(function(){
+	
+	"use strict";
+
 	angular.module("oquequeeuiafalar.components.widgets.author-information", []);
 
 })();
@@ -40023,7 +40030,7 @@ TagsApi.$inject = ["AjaxModel", "$FrontPress", "ConfigsToParams"];
 	
 	"use strict";
 
-	angular.module("oquequeeuiafalar.components.widgets.instagram", []);
+	angular.module("oquequeeuiafalar.components.widgets.instagram", ["instagram-twenty"]);
 
 })();
 (function(){
@@ -40050,7 +40057,23 @@ TagsApi.$inject = ["AjaxModel", "$FrontPress", "ConfigsToParams"];
 (function(){
   "use strict";
 
-  angular.module("oquequeeuiafalar").config(function($FrontPressProvider, $locationProvider){      
+  angular.module("oquequeeuiafalar").config(function($FrontPressProvider, $locationProvider, PublicidadeModelProvider){      
+
+
+      var publicidades = [{ image: "http://natalia.blog.br/wp-content/uploads/2017/02/editora-planeta-2017-parceiros.png", 
+          imageAlt: "Logotipo dos parceiros 2017 da Editora Planeta", 
+          href:"http://www.planetadelivros.com.br/"
+      },{
+        image: "http://natalia.blog.br/wp-content/uploads/2016/03/2016_Parceria_Selo-Biruta.png",
+        imageAlt: "Selo parceria Biruta 2016",
+        href: "http://www.editorabiruta.com.br"
+      },{
+        image: "http://natalia.blog.br/wp-content/uploads/2016/03/2016_Parceria_Selo-Gaivota.png",
+        imageAlt: "Selo parceria Editora Gaivota 2016",
+        href: "http://www.editoragaivota.com.br"
+      }];
+
+      PublicidadeModelProvider.configure.setItems(publicidades);
 
       $FrontPressProvider.configure.load({
           "restApiUrl": "http://natalia.blog.br/wp-json",
@@ -40183,6 +40206,64 @@ TagsApi.$inject = ["AjaxModel", "$FrontPress", "ConfigsToParams"];
 	
 	"use strict";
 
+	angular.module("instagram-twenty").factory("InstagramApiModel", InstagramApiModel);
+
+	function InstagramApiModel(AjaxModel){
+		var model = {
+			getPhotos: getPhotos
+		};
+
+		function getPhotos(){
+			return AjaxModel.get("http://www.instagram.com/sjnat/media/");
+		}
+
+		return model;
+	}
+
+})();
+(function(){
+	
+	"use strict";
+
+	angular.module("instagram-twenty").factory("InstagramModel", InstagramModel);
+
+	function InstagramModel(InstagramApiModel){
+		var model = {
+			thumbnails: null,
+			init: init
+		};
+
+		function init(){
+			var instagramPromise = InstagramApiModel.getPhotos();
+			instagramPromise.then(function(result){
+				var thumbnails = [];
+
+				var photos = result.data.items;				
+
+				for(var i=0; i < photos.length;i++){
+					var thumbnail = {
+						url: photos[i].images.thumbnail.url,
+						link: photos[i].link,
+						imageAlt: photos[i].caption.text
+					};
+					thumbnails.push(thumbnail);
+				}
+
+				model.thumbnails = thumbnails;
+				console.log(model);
+
+			})
+		}
+
+
+		return model;
+	}
+
+})();
+(function(){
+	
+	"use strict";
+
 	angular.module("oquequeeuiafalar.components.widgets.author-information").directive("widgetAuthorInformation", WidgetAuthorInformationDirective);
 
 	function WidgetAuthorInformationDirective(){
@@ -40210,9 +40291,12 @@ TagsApi.$inject = ["AjaxModel", "$FrontPress", "ConfigsToParams"];
 		var directive = {
 			templateUrl: "/src/javascript/components/widgets/instagram/templates/instagram.template.html",
 			restrict: "AE",
-			controller: function(){
+			controller: function(InstagramModel){
 				var vc = this;
+				vc.vm = InstagramModel;
+				vc.vm.init();
 			},
+			scope:  {},
 			controllerAs: "vc",
 			bindToController: true,
 			replace: true			
@@ -40252,14 +40336,49 @@ TagsApi.$inject = ["AjaxModel", "$FrontPress", "ConfigsToParams"];
 		var directive = {
 			templateUrl: "/src/javascript/components/widgets/publicidade-sidebar/templates/publicidade-sidebar.template.html",
 			restrict: "AE",
-			controller: function(){
+			controller: function(PublicidadeModel){
 				var vc = this;
+				vc.vm = PublicidadeModel;
 			},
+			scope: {},
 			controllerAs: "vc",
 			bindToController: true,
 			replace: true			
 		};
 		return directive;
+	}
+
+})();
+(function(){
+	
+	"use strict";
+
+	angular.module("oquequeeuiafalar.components.widgets.publicidade-sidebar").provider("PublicidadeModel", PublicidadeModelProvider);
+
+	function PublicidadeModelProvider(){
+		
+		var configure = {
+			setItems: setItems,
+			items: []			
+		};
+
+		function setItems(items){
+			configure.items = items;			
+		}
+
+		var provider = {
+			$get: PublicidadeModel,
+			configure: configure
+		};
+		return provider;
+
+		function PublicidadeModel(){
+			var model = {
+				items: configure.items
+			};
+			return model;
+		}
+
 	}
 
 })();

@@ -1,17 +1,8 @@
 <div class="natalia-widget">
   <p class="natalia-widget-title">Instagram</p>
   <div class="natalia-instagram-grid">
-    <a href="" class="natalia-instagram-grid-link">
-      <img src="https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/e35/12728667_1694955857408353_1396697521_n.jpg?ig_cache_key=MTE4MTE0NDA2NTU1ODczNjc3Ng%3D%3D.2" alt="" class="col-6 natalia-instagram-grid-image">
-    </a>
-    <a href="" class="natalia-instagram-grid-link">
-      <img src="https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-xat1/t51.2885-15/e35/12558350_124412684611283_1762272097_n.jpg?ig_cache_key=MTE4MDY1MTg0NTY2MzYxNjI4Nw%3D%3D.2" alt="" class="col-6 natalia-instagram-grid-image">
-    </a>
-    <a href="" class="natalia-instagram-grid-link">
-      <img src="https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xta1/t51.2885-15/s750x750/sh0.08/e35/12519318_152405398469508_705781223_n.jpg?ig_cache_key=MTE2NzQzNDIwNDIzNzAzMjgzMQ%3D%3D.2" alt="" class="col-6 natalia-instagram-grid-image">
-    </a>
-    <a href="" class="natalia-instagram-grid-link">
-      <img src="https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-15/e35/12501980_1085251601505345_1997575456_n.jpg?ig_cache_key=MTE2Njc4MTk4MTUyNjA5MzY3NA%3D%3D.2" alt="" class="col-6 natalia-instagram-grid-image">
+    <a ng-href="{{thumbnail.link}}" class="natalia-instagram-grid-link" ng-repeat="thumbnail in vc.vm.thumbnails | limitTo: 10" target="_blank">
+      <img ng-src="{{thumbnail.url}}" alt="{{thumbnail.imageAlt}}" class="col-6 natalia-instagram-grid-image">
     </a>
   </div>
   <a href="https://www.instagram.com/sjnat/" target="_blank">instagram @sjnat</a>
